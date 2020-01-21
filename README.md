@@ -7,3 +7,11 @@ This will be helpful when working on a Bedrock Wordpress project with a custom t
 Following [this guide](https://www.atlassian.com/git/tutorials/git-subtree) to subtree.
 
 Paths & files in this repo are selectively pulled from [Bedrock](https://github.com/roots/bedrock).
+
+## Walkthrough
+
+Add the theme repo as a remote:
+
+ `git remote add -f theme-upstream git@github.com:andronocean/oakville-college.git`
+
+There'll be a `warning: no common commits`, which makes sense.
