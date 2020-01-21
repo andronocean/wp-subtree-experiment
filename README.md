@@ -30,3 +30,4 @@ Then, add the subtree:
 
 We can edit the theme files and commit changes on our main, parent repo.
 
+Note that it's a good idea to put changes inside and outside the subtree into separate commits (we'll see why...)

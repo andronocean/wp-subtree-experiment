@@ -1,10 +1,13 @@
 {
-  "name": "roots/bedrock",
+  "name": "andronocean/wp-subtree-experiment",
   "type": "project",
   "license": "MIT",
-  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
+  "description": "messing about with trees",
   "authors": [
+    {
+      "name": "Andron Ocean",
+      "homepage": "https://www.andronocean.com"
+    },
     {
       "name": "Scott Walkinshaw",
       "email": "scott.walkinshaw@gmail.com",
