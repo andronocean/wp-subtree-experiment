@@ -15,3 +15,13 @@ Add the theme repo as a remote:
  `git remote add -f theme-upstream git@github.com:andronocean/oakville-college.git`
 
 There'll be a `warning: no common commits`, which makes sense.
+
+Then, add the subtree:
+
+`git subtree add --prefix=web/app/themes/oakville-college theme-upstream master --squash`
+
+- `--prefix` is the subdirectory into which the subtree repo will be cloned.
+- `theme-upstream master` tells git to grab the "master" branch from the remote.
+- `--squash` tells git to create a single commit adding everything, instead of importing the remote's entire history (much tidier!)
+
+(We actually get two commits out of this: the first is a squash, the second handles the merge.)
