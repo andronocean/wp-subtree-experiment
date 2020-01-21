@@ -41,3 +41,27 @@ If the upstream theme gets updated and we want to include those changes in our p
 The options are the same as wiht `subtree add`.
 
 (It's safest to do this on a special branch, since merging could be a complicated affair.)
+
+### Splitting out the subtree
+
+Let's say we find a new use for our theme and want to put it in its own repository. We can split out the subtree edit history into its own project.
+
+To start, we'll make a new repo wherever we want the theme-on-its-own to live. Note that this *must* be a bare repo, or it won't work: 
+
+`git init --bare`
+
+In the main monorepo directory, we run a split:
+
+`git subtree split --prefix=web/app/themes/oakville-college --annotate="(split)" -b split`
+
+This creates a new branch called "split". We can then push this branch to the new, empty repo:
+
+`git push /full/path/to/the/new/repo split:master`
+
+Since it's a bare repo, we can't `cd` to it and `ls` to view contents. `git log` inside the repo directory works, however, and will show that *only* the commits touching the original subtree are included. (This is why separating main and subtree commits is smart.)
+
+
+### Notes and more resources
+1. [Full explanation and documentation for git subtree](https://git.kernel.org/pub/scm/git/git.git/plain/contrib/subtree/git-subtree.txt)
+2. [Comparison of subtrees and submodules](https://codewinsarguments.co/2016/05/01/git-submodules-vs-git-subtrees/)
+3. Don't confuse `git subtree` with the [subtree merge strategy](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging#_subtree_merge). See note 1 for differences.
