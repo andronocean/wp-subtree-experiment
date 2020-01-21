@@ -31,3 +31,13 @@ Then, add the subtree:
 We can edit the theme files and commit changes on our main, parent repo.
 
 Note that it's a good idea to put changes inside and outside the subtree into separate commits (we'll see why...)
+
+### Pull in upstream changes
+
+If the upstream theme gets updated and we want to include those changes in our project, we can do so:
+
+`git subtree pull --prefix=web/app/themes/oakville-college theme-upstream master --squash`
+
+The options are the same as wiht `subtree add`.
+
+(It's safest to do this on a special branch, since merging could be a complicated affair.)
