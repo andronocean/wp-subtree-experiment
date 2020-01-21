@@ -25,3 +25,8 @@ Then, add the subtree:
 - `--squash` tells git to create a single commit adding everything, instead of importing the remote's entire history (much tidier!)
 
 (We actually get two commits out of this: the first is a squash, the second handles the merge.)
+
+### Make project changes
+
+We can edit the theme files and commit changes on our main, parent repo.
+
